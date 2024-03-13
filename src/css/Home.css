@@ -1,0 +1,27 @@
+.home-container {
+    text-align: center; /* Center align content */
+    padding: 50px; /* Add padding for better spacing */
+  }
+  
+  .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff; /* Blue button color */
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 20px; /* Add some space above the button */
+  }
+  .btn:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+  }
+  
+  /* Styles for the placeholder images */
+  .image-grid {
+    margin-top: 30px; /* Add space between button and images */
+  }
+  .university-image {
+    width: 200px; /* Adjust image width */
+    margin: 10px; /* Add margin around each image */
+  }
+  

@@ -1,0 +1,13 @@
+
+.about-container {
+    text-align: center; /* Center align text */
+  }
+  
+  .about-container h1 {
+    margin-bottom: 20px; /* Add some space below the heading */
+  }
+  
+  .about-container p {
+    margin-bottom: 15px; /* Add some space below paragraphs */
+  }
+  

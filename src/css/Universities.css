@@ -1,0 +1,40 @@
+/* Universities.css */
+
+.universities-container {
+    padding: 20px;
+    text-align: center; /* Center align text */
+  }
+  
+  h1 {
+    margin-bottom: 10px; /* Reduced margin-bottom */
+  }
+  
+  input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .universities-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .universities-list li {
+    margin-bottom: 10px;
+  }
+  
+  .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff; /* Blue button color */
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-right: 10px;
+    margin-bottom: 20px; /* Increase margin-bottom */
+  }
+  .btn:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+  }
+  

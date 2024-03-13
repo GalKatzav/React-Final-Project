@@ -1,17 +1,32 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom";
+import "./index.css";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from "./screens/Home";
+import About from "./screens/About";
+import WorldUniversities from "./screens/WorldUniversities";
+import AddUniversities from "./screens/AddUniversities";
+import Footer from "./Footer.js"; // Import the Footer component
+import MyRouter from "./MyRouter"; // Assuming MyRouter contains your navbar and footer components
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+ReactDOM.render(
+  <BrowserRouter>
+    <div>
+      {/* Include the navbar and footer components outside the Routes */}
+      <MyRouter />
+      <Footer />
+      <Routes>
+        <Route path="/" element={<App />} />
+        <Route path="/home" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/worldUniversities" element={<WorldUniversities />} />
+        <Route path="/addUniversities" element={<AddUniversities />} />
+      </Routes>
+    </div>
+  </BrowserRouter>,
+  document.getElementById("root")
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();

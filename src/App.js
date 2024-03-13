@@ -1,13 +1,7 @@
-import logo from "./logo.svg";
 import "./App.css";
-import Footer from "./Footer.js"; // Import the Footer component
 
 function App() {
-  return (
-    <div className="App">
-      <Footer />
-    </div>
-  );
+  return <div className="App"></div>;
 }
 
 export default App;

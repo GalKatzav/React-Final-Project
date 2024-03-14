@@ -1,29 +1,34 @@
 .footer-container {
-    background-color: cornsilk; /* Change to desired cream color */
-    border: 2px solid black; /* Black outline */
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    text-align: center; /* Center text horizontally */
-  }
-  
-  .footer-content {
-    padding: 10px; /* Add some padding inside the footer */
-  }
-  
-  .footer-icons {
-    display: flex;
-    justify-content: center; /* Center icons horizontally */
-  }
-  
-  .footer-link {
-    margin-right: 10px;
-    color: black; /* Icon color */
-    font-size: 20px;
-    text-decoration: none;
-  }
-  
-  .footer-link:hover {
-    color: blue; /* Change icon color on hover */
-  }
-  
+  background-color: cornsilk; /* Change to desired cream color */
+  border: 2px solid black; /* Black outline */
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  text-align: center; /* Center text horizontally */
+  padding: 5px 20px; /* Adjust padding */
+  height: 50px; /* Adjust height */
+  text-align: center;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between; /* Align items to the sides */
+  align-items: center; /* Center items vertically */
+  text-align: center;
+}
+
+.footer-icons {
+  display: flex;
+  align-items: center; /* Center icons vertically */
+}
+
+.footer-link {
+  margin-right: 10px;
+  color: black; /* Icon color */
+  font-size: 20px;
+  text-decoration: none;
+}
+
+.footer-link:hover {
+  color: blue; /* Change icon color on hover */
+}

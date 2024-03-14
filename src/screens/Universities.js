@@ -6,6 +6,7 @@ import DeleteUniversity from "../functions/DeleteUniversity"; // Import Universi
 import "../css/Universities.css"; // Import CSS file for styling
 
 const Universities = () => {
+    // State variables
     const [universities, setUniversities] = useState([]);
     const [searchQuery, setSearchQuery] = useState("");
     const [loading, setLoading] = useState(true);
@@ -14,24 +15,24 @@ const Universities = () => {
     // Fetch universities data from API
     useEffect(() => {
       fetch("http://universities.hipolabs.com/search")
-        .then(response => response.json())
-        .then(data => {
+        .then((response) => response.json())
+        .then((data) => {
           setUniversities(data);
           setLoading(false);
         })
-        .catch(error => {
+        .catch((error) => {
           console.log(error);
           setLoading(false);
         });
     }, []);
   
     // Filter universities based on search query
-    const filteredUniversities = universities.filter(university =>
+    const filteredUniversities = universities.filter((university) =>
       university.name.toLowerCase().includes(searchQuery.toLowerCase())
     );
   
     // Function to handle university selection
-    const handleUniversitySelect = university => {
+    const handleUniversitySelect = (university) => {
       setSelectedUniversity(university);
     };
   
@@ -41,7 +42,7 @@ const Universities = () => {
     };
   
     // Function to handle editing a university
-    const handleEdit = editedUniversity => {
+    const handleEdit = (editedUniversity) => {
       // Write logic to edit the university
       console.log("Editing university:", editedUniversity);
       // Once the editing is complete, you may want to update the universities state
@@ -49,7 +50,7 @@ const Universities = () => {
     };
   
     // Function to handle deleting a university
-    const handleDelete = id => {
+    const handleDelete = (id) => {
       // Write logic to delete the university with the given id
       console.log("Deleting university with id:", id);
       // Once the deletion is complete, you may want to update the universities state
@@ -59,14 +60,16 @@ const Universities = () => {
     return (
       <div className="universities-container">
         <h1>Universities</h1>
-        <Link to="/addUniversities" className="btn">Add University</Link>
+        <Link to="/addUniversities" className="btn">
+          Add University
+        </Link>
   
         {/* Search input */}
         <input
           type="text"
           placeholder="Search universities..."
           value={searchQuery}
-          onChange={e => setSearchQuery(e.target.value)}
+          onChange={(e) => setSearchQuery(e.target.value)}
         />
   
         {/* Display universities if data is loaded, otherwise show loading message */}
@@ -84,7 +87,10 @@ const Universities = () => {
             ) : (
               <ul className="universities-list">
                 {filteredUniversities.map((university, index) => (
-                  <li key={index} onClick={() => handleUniversitySelect(university)}>
+                  <li
+                    key={index}
+                    onClick={() => handleUniversitySelect(university)}
+                  >
                     {university.name}
                   </li>
                 ))}

@@ -1,10 +1,9 @@
 import React, { useState } from "react";
 import EditUniversity from "./EditUniversity";
-import UniversityDetails from "../css/UniversityDetails.css";
 
 const UniversityDetail = ({ university, onClose, onEdit }) => {
   const [isEditing, setIsEditing] = useState(false);
-  const [editedUniversity, setEditedUniversity] = useState({ ...university }); // Copy initial university data
+  const [editedUniversity, setEditedUniversity] = useState({ ...university });
 
   const handleEdit = () => {
     setIsEditing(true);
@@ -17,13 +16,11 @@ const UniversityDetail = ({ university, onClose, onEdit }) => {
 
   const handleCancelEdit = () => {
     setIsEditing(false);
-    // Reset edited university data to original values
     setEditedUniversity({ ...university });
   };
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
-    // Update edited university data
     setEditedUniversity((prevState) => ({
       ...prevState,
       [name]: value,
@@ -31,11 +28,16 @@ const UniversityDetail = ({ university, onClose, onEdit }) => {
   };
 
   return (
-    <div className="form">
+    <div className="form-container">
       <h2>{university.name}</h2>
       <p>Country: {university.country}</p>
       <p>
-        Website: <a href={university.website}>{university.website}</a>
+        Website:{" "}
+        {university.web_pages.map((url, index) => (
+          <a key={index} href={url}>
+            {url}
+          </a>
+        ))}
       </p>
       {!isEditing && (
         <div>
@@ -44,7 +46,7 @@ const UniversityDetail = ({ university, onClose, onEdit }) => {
         </div>
       )}
       {isEditing && (
-        <div>
+        <div className="form">
           <EditUniversity
             university={editedUniversity}
             onInputChange={handleInputChange}
